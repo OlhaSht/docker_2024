@@ -1,0 +1,19 @@
+FROM node:16.17.0-alpine3.15
+
+RUN mkdir /app
+
+WORKDIR /app                  
+#это путь
+
+COPY ./ ./                  
+#путь копирования. он долгий
+
+RUN npm i
+
+EXPOSE 3000
+
+CMD ["npm","run","start"]
+
+# sudo docker run -dit -p 8080:3000 --name docker_server  server:0.0.1 
+# ccd919829ea53c63d78a63dbe72071b1f439a2cd87032392bdb7dacce12e1645
+#это команда в терминале, запускающая созданный образ на порту 8080
