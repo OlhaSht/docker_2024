@@ -14,6 +14,15 @@ EXPOSE 3000
 
 CMD ["npm","run","start"]
 
+
+# sudo docker build -t server:0.0.1 -f ./Dockerfile-dev .
+# команда строит server:0.0.1 внутри образа
+
 # sudo docker run -dit -p 8080:3000 --name docker_server  server:0.0.1 
 # ccd919829ea53c63d78a63dbe72071b1f439a2cd87032392bdb7dacce12e1645
-#это команда в терминале, запускающая созданный образ на порту 8080
+#это команда в терминале, запускающая созданный образ на порту 8080, но изменения невозможны
+
+# sudo docker run -dit -p 8080:3000 -v $(pwd):/app:ro --name docker_server
+# server:0.0.1 
+# эта команда позволяет читать изменения в проэкте :ro
+
